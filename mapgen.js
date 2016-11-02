@@ -17,8 +17,7 @@ const regions = [{name: "north", id: "JzKStMojAGA"},
                  {name: "highland", id: "bJ55F4lb3WJ"},
                  {name: "south", id: "T6shP0GyRuQ"}];
                  
-loadJSON("./data/vnProv.json")
-	.then(json => {
+loadJSON("./data/vnProv.json").then(json => {
 		regions.forEach(region => {
 			let filtered = {orgunits : []};
 			filtered.orgunits = json.features.filter(feature => {
@@ -30,4 +29,4 @@ loadJSON("./data/vnProv.json")
 			});
 			writeJSON.sync(`./data/${region.name}region.json`,filtered,null);
 		});
-	})
+})
