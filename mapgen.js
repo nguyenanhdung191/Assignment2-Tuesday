@@ -23,7 +23,7 @@ loadJSON("./data/vnProv.json").then(json => {
 			filtered.orgunits = json.features.filter(feature => {
 					if(feature.properties.parent === region.id){
 						return true;
-					}else{ return false };
+					}else{ return false; }
 			}).map(orgUnit => {
 				return transform(orgUnit);
 			});
